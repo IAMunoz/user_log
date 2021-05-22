@@ -75,17 +75,14 @@ WSGI_APPLICATION = 'user_log.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'equintecbkp',
-        'USER': 'equintec',
-        'PASSWORD': 'sql.20',
-        'HOST': '190.13.64.131',
-        'PORT': '2014',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 13 for SQL Server',
-        },
-    },
+   'default': {
+        'ENGINE': 'django.db.backends.postgresql', # cambiar la base de datos a postgres
+        'NAME': 'users_db', # nombre de la base de datos, se creará en el servidor de Postgres a continuación
+        'USER': 'postgres', # postgres para macOS o 'USER': 'postgres', para Windows
+        'PASSWORD': 'root', # contraseña a la que la cambió al instalar Postgres
+        'HOST': '127.0.0.1', # dirección IP localhost
+        'PORT': '5432', # puerto del servidor postgres predeterminado
+    }
 }  
 
 
